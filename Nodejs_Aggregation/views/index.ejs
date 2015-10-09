@@ -1,0 +1,2428 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SampleApp - Node JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/new/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="static/css/new/codemirror.css">
+    <link rel="stylesheet" href="static/css/new/eclipse.css">
+
+
+    <style>
+        body{
+            padding: 10px;  
+        }
+        .c-method{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- Header and Nav -->
+       
+<div class="col-md-3">
+    <h1><img src="/static/img/logo-yodleeinteractive-transparent.png" /></h1>
+</div>
+<div class="col-md-9">
+    <h3>Yodlee - Node JS Sample App</h3>
+
+    <p>Welcome the Yodlee Node JS Sample App!</p>
+</div>
+
+<!-- Cobrand Session Token -->
+<div class="show-method-api">
+    <div class="col-md-12 show-method-button"> 
+        <button class="btn btn-success btn-show btn-show-method show-method-cobSessionToken hidden"  show-method="cobSessionToken" > Cobrand Login </button>                        
+    </div>
+</div>
+<div class="show-method-api">
+    <div class="col-md-12 show-method-button"> 
+        <button class="btn btn-primary btn-show btn-hide-method hide-method-cobSessionToken"  hide-method="cobSessionToken" > Cobrand Login </button>                        
+    </div>
+</div>
+
+<div class="cobSessionToken">
+<fieldset>
+    <h2>Cobrand Session Token</h2>
+    <div class="c-method">
+        <div class="notifications alert alert-error" style="display:none;"></div>
+        <div class="col-md-3">
+            <!--<input type="text" class="span form-control" value="sbCoblecuong" title="cobrandLogin" id="cobrandLogin" placeholder="Enter the Cobrand Login"><br />-->
+            <input type="text" class="span form-control" value="sbCobgzpgg3x" title="cobrandLogin" id="cobrandLogin" placeholder="Enter the Cobrand Login"><br />
+            <!--<input type="password" class="span form-control" value="86483cdc-ea5d-4d46-8c81-415aec0d74f1" title="cobrandPassword" id="cobrandPassword" placeholder="Enter the cobrand password"> <br />-->
+            <input type="password" class="span form-control" value="5c34466c-73c1-42b8-b3f6-177c5e33289c" title="cobrandPassword" id="cobrandPassword" placeholder="Enter the cobrand password"> <br />
+            <div class="input-prepend">
+                <input type="button" class="btn btn-primary btn-cobSession-Token"  value="Get CobSession Token" /> <br /><br />               
+                <input type="text" name="cobSessionToken" class="span5 form-control" title="cobSessionToken" id="cobSessionToken">
+            </div>
+        </div>
+        <div class="col-md-9">
+            <p><strong>Response Json:</strong></p>
+            <textarea id="response-cobSessionToken" class="response"></textarea>
+        </div>  
+    </div>
+</fieldset>
+</div>
+
+<!-- Cobrand Session Token -->
+<hr>
+<hr>
+<div class="show-method-api">
+     <div class="col-md-12 show-method-button"> 
+        <button class="btn btn-success btn-show btn-show-method show-method-frame-select_api hidden"  show-method="frame-select_api" > Select Flow </button>                        
+    </div>
+</div>
+<div class="show-method-api">
+     <div class="col-md-12 show-method-button"> 
+        <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-select_api hidden"  hide-method="frame-select_api" > Select Flow </button>                        
+    </div>
+</div>
+<div class="frame-select_api hidden">    
+    <fieldset>
+        <div>
+            <div >
+                <h2>Select Flow</h2>
+            <div>
+            <div class="select-flow">
+                <div >
+                    <h3>Site-based Features</h3>
+                <div>
+                <button class="btn btn-primary btn-select-flow" flow="frame-site-based-add-site-account" >Add Site Account </button>
+                <button class="btn btn-primary btn-select-flow" flow="frame-site-based-refresh-site-account" >Refresh Site Account </button>
+                <button class="btn btn-primary btn-select-flow" flow="frame-site-based-update-site-account" >Update Site Account </button>
+                <button class="btn btn-primary btn-select-flow" flow="frame-site-based-delete-site-account" >Delete Site Account </button>
+                <div >
+                    <h3>​​Container-based Features</h3>
+                <div>
+                <button class="btn btn-primary btn-select-flow" flow="frame-container-based-add-account" >Add Account </button>
+                <button class="btn btn-primary btn-select-flow" flow="frame-container-based-refresh-account" >Refresh Account </button>
+            </div>               
+        </div>
+    </fieldset>
+    
+</div>
+
+<br /><br />
+<div class="frame-site-based-add-site-account hidden api_hidden" >   
+
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemlecuong1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemlecuong1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="add" hide-method="frame-select_api" show-btn-back="btn-back-userSessionToken" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> 
+                                                
+                        <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+
+    <!-- MethodUser Login s --> 
+    <div class="show-method-api">
+        <div class="show-method-button col-md-12"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-searchSite hidden" show-method="frame-searchSite" >Search Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="show-method-button col-md-12"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-searchSite hidden"  hide-method="frame-searchSite" >Search Sites </button>                        
+        </div>
+    </div>   
+    <div class="frame-searchSite hidden api_hidden">                
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>:Search Sites
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteTraversal/searchSite" class="short_url">
+                    /jsonsdk/SiteTraversal/searchSite
+                </span>
+            </h2>
+
+            <div class="c-method searchSite">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>siteSearchString</label>
+                    <input class="ref-SearchSites-siteSearchString span13 form-control" value="FSA">
+                    <br><br>
+                    <button class="btn btn-searchSite btn-primary" hide-method="userSessionToken" show-btn-back="hidden btn-back-searchSite">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-searchSite" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- MethodUser Login s -->
+    <!--List Site-->
+    <div class="show-method-api">
+         <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-add-account hidden"  show-method="frame-list-sites-add-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+         <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-add-account hidden"  hide-method="frame-list-sites-add-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="frame-list-sites-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Sites</b> 
+            </h2>
+            <div id="container-page" class="list-sites">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Site</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-add-site-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+    </div>      
+    <!--List Site-->
+   
+    <!-- Method getSiteInfo -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteInfo hidden"  show-method="frame-getSiteInfo" >Get Site Info </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteInfo hidden"  hide-method="frame-getSiteInfo" >Get Site Info </button>                        
+        </div>
+    </div>
+        <div class="frame-getSiteInfo hidden api_hidden">            
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>:Get Site Info
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteTraversal/getSiteInfo" class="short_url">
+                        /jsonsdk/SiteTraversal/getSiteInfo<span>
+                        </span>
+                    </span>
+                </h2>
+                <div class="c-method getSiteInfo">
+                    <div class="col-md-3">
+                        <label>cobSessionToken</label>
+                        <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                        <br />
+                        <label>siteFilter.reqSpecifier</label>
+                        <input placeholder="siteFilter.reqSpecifier" class="ref-siteFilter-reqSpecifier  span13 form-control" value="1">
+                        <br />
+                        <label>siteFilter.siteId</label>
+                        <input class="ref-siteFilter-siteId span13 form-control" value="16441">
+                        <br><br>
+                        <button class="btn btn-getSiteInfo btn-primary">Send data</button>
+                        <br><br>
+                    </div>
+                    <div class="col-md-9">
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-getSiteInfo" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </fieldset>            
+        </div>
+        <!-- Method getSiteInfo -->
+        <!-- Method getSiteLoginForm -->
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteLoginForm hidden"  show-method="frame-getSiteLoginForm" >Get Site Login Form </button>                        
+            </div>
+        </div>
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button "> 
+                <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteLoginForm hidden"  hide-method="frame-getSiteLoginForm" >Get Site Login Form </button>                        
+            </div>
+        </div>
+
+        <div class="frame-getSiteLoginForm hidden api_hidden">            
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>:Get Site Login Form
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/getSiteLoginForm" class="short_url">
+                        /jsonsdk/SiteAccountManagement/getSiteLoginForm<span>
+                        </span>
+                    </span>
+                </h2>
+                <div class="c-method getSiteLoginForm">
+                    <div class="col-md-3">
+                        <label>Cobrand session Token</label>
+                        <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                        <br />
+                        <label>User session Token</label>
+                        <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                        <br />
+                        <label>siteId</label>
+                        <input class="ref-getSiteLoginForm-siteId span13 form-control" value="16441">
+                        <br><br>
+                        <button class="btn btn-getSiteLoginForm btn-primary">Send data</button>
+                        <br><br>
+                    </div>
+                    <div class="col-md-9">
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-getSiteLoginForm" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+        <!-- Method getSiteLoginForm -->
+        <!-- Method Site Account Management: addSiteAccount  -->
+        <div class="show-method-api">        
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-success btn-show btn-show-method show-method-frame-addSiteAccount hidden"  show-method="frame-addSiteAccount" > Add Site Account</button>                        
+            </div>
+        </div>
+        <div class="show-method-api">        
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-addSiteAccount hidden"  hide-method="frame-addSiteAccount" > Add Site Account</button>                        
+            </div>
+        </div>
+    
+        <div class="frame-addSiteAccount hidden api_hidden">
+            
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>: Site Account Management - addSiteAccount1
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/addSiteAccount1" class="short_url">
+                        /jsonsdk/SiteAccountManagement/addSiteAccount1<span>
+                        </span>
+                    </span>
+                </h2>
+                <form id="IDaddSiteAccount">
+                    <div class="c-method addSiteAccount">
+                        <div class="col-md-3">
+                            <div class="component-list">
+                                <input type="hidden" placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                                <input type="hidden"  placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control">
+                                <input type="hidden" class="ref-addSiteAccount-siteId span13 form-control" name="siteId" value="16441">
+                            </div>
+                            <button class="btn btn-addSiteAccount btn-primary">Send data</button>
+                            <br><br>
+                        </div>
+                        <div class="col-md-9">
+                            
+                            <p><strong>Response Json:</strong></p>
+                            <textarea id="response-addSiteAccount" class="response span10"></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </fieldset>            
+        </div>
+        <!-- Method Site Account Management: addSiteAccount  -->
+
+        <!-- Method getMFAResponseForSite -->
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-success btn-show btn-show-method show-method-frame-getMFAResponseForSite hidden"  show-method="frame-getMFAResponseForSite" > Get MFA Response For Site</button>                        
+            </div>
+        </div>
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getMFAResponseForSite hidden" hide-method="frame-getMFAResponseForSite" > Get MFA Response For Site</button>                        
+            </div>
+        </div>
+        <div class="frame-getMFAResponseForSite hidden api_hidden">
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>: Get MFA Response For Site
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getMFAResponseForSite" class="short_url">
+                        /jsonsdk/Refresh/getMFAResponseForSite<span>
+                        </span>
+                    </span>
+                </h2>
+                <div class="c-method getMFAResponseForSite">
+                    <div class="col-md-3">
+                        <label>cobSessionToken</label>
+                        <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                        <br />
+                        <label>userSessionToken</label>
+                        <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                        <br />
+                        <label>memSiteAccId</label>
+                        <input class="ref-memSiteAccId span13 form-control" value="16441">
+                        <br><br>
+                        <button api_type="add" class="btn btn-getMFAResponseForSite btn-primary">Send data</button>
+                        <br><br>
+                    </div>
+                    <div class="col-md-9">
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-getMFAResponseForSite" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+        <!-- Method getMFAResponseForSite -->
+        <!-- Method Put MFA Request For Site -->
+        <div class="show-method-api">  
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-success btn-show btn-show-method show-method-frame-putMFARequestForSite hidden"  show-method="frame-putMFARequestForSite" > Put MFA Request For Site </button>                        
+            </div>
+        </div>
+        <div class="show-method-api">  
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-putMFARequestForSite hidden" hide-method="frame-putMFARequestForSite" > Put MFA Request For Site </button>                        
+            </div>
+        </div>
+    
+        <div class="frame-putMFARequestForSite hidden api_hidden">
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>: Put MFA Request For Site
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/putMFARequestForSite" class="short_url">
+                        /jsonsdk/Refresh/putMFARequestForSite<span>
+                        </span>
+                    </span>
+                </h2>
+                <form id="IDputMFARequestForSite">
+                    <div class="c-method putMFARequestForSite">
+                        <div class="col-md-6">
+                            <label>cobSessionToken</label>
+                            <input placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control"><br />
+                            <label>userSessionToken</label>
+                            <input placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control"><br />
+                            <label>memSiteAccId</label>
+                            <input class="ref-memSiteAccId span13 form-control" name="memSiteAccId" value="10055719"><br />
+                            <label>userResponse.objectInstanceType</label>
+                            <input type="text" name="userResponse.objectInstanceType" class="span13 form-control" value="com.yodlee.core.mfarefresh.MFAQuesAnsResponse"><br />
+                            <label>userResponse.quesAnsDetailArray[0].answer</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[0].answer" class="span13 form-control" value="Texas"><br />
+                            <label>userResponse.quesAnsDetailArray[0].answerFieldType</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[0].answerFieldType" class="span13 form-control" value="text"><br />
+                            <label>userResponse.quesAnsDetailArray[0].metaData</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[0].metaData" class="span13 form-control" value="QUESTION_1"><br />
+                        </div>
+                        <div class="col-md-6">
+                            <label>userResponse.quesAnsDetailArray[0].question</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[0].question" class="span13 form-control" placeholder="" value="What is the name of your state?"><br />
+                            <label>userResponse.quesAnsDetailArray[0].questionFieldType</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[0].questionFieldType" class="span13 form-control" value="label"><br />
+                            <label>userResponse.quesAnsDetailArray[1].answer</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[1].answer" class="span13 form-control" value="w3schools"><br />
+                            <label>userResponse.quesAnsDetailArray[1].answerFieldType</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[1].answerFieldType" class="span13 form-control" value="text"><br />
+                            <label>userResponse.quesAnsDetailArray[1].metaData</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[1].metaData" class="span13 form-control" value="QUESTION_2"><br />
+                            <label>userResponse.quesAnsDetailArray[1].question</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[1].question" class="span13 form-control" value="What is the name of your first school"><br />
+                            <label>userResponse.quesAnsDetailArray[1].questionFieldType</label>
+                            <input type="text" name="userResponse.quesAnsDetailArray[1].questionFieldType" class="span13 form-control" value="label"><br />
+                        </div>
+
+                        <div class="col-md-12">
+                            <button api_type="add" class="btn btn-putMFARequestForSite btn-primary">Send data</button>
+                            <br><br>
+                            <p><strong>Response Json:</strong></p>
+                            <textarea id="response-putMFARequestForSite" class="response span10"></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <!-- Method Put MFA Request For Site  -->
+        <!-- Method getSiteRefreshInfo -->
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteRefreshInfo hidden"  show-method="frame-getSiteRefreshInfo" > Get Site Refresh Info</button>                        
+            </div>
+        </div>
+        <div class="show-method-api">
+            <div class="col-md-12 show-method-button"> 
+                <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteRefreshInfo hidden"  hide-method="frame-getSiteRefreshInfo" > Get Site Refresh Info</button>                        
+            </div>
+        </div>
+        <div class="frame-getSiteRefreshInfo hidden api_hidden">
+            <fieldset>
+                <h2 class="description">
+                    <b>Method</b>: Get Site Refresh Info
+                    <br />
+                    <span class="method c-gray">POST:</span>
+                    <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getSiteRefreshInfo" class="short_url">
+                        /jsonsdk/Refresh/getSiteRefreshInfo<span>
+                        </span>
+                    </span>
+                </h2>
+                <div class="c-method getSiteRefreshInfo">
+                    <div class="col-md-3">
+                        <label>cobSessionToken</label>
+                        <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                        <br />
+                        <label>userSessionToken</label>
+                        <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                        <br />
+                        <label>memSiteAccId</label>
+                        <input class="ref-memSiteAccId span13 form-control" value="10055719">
+                        <br><br>
+                        <button api_type="add" class="btn btn-getSiteRefreshInfo btn-primary">Send data</button>
+                        <br><br>
+                    </div>
+                    <div class="col-md-9">
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-getSiteRefreshInfo" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+        <!-- Method getSiteRefreshInfo -->
+    </div>
+
+<div class="frame-site-based-refresh-site-account hidden api_hidden">
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemcuongle1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemcuongle1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="refresh" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken-refresh-site" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+    <!-- Get Site Accounts -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteAccounts-api-refresh hidden"  show-method="frame-getSiteAccounts-api-refresh" > Get Sites Accounts </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteAccounts-api-refresh hidden"  hide-method="frame-getSiteAccounts-api-refresh" > Get Sites Accounts </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getSiteAccounts-api-refresh hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Sites Accounts
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/getSiteAccounts" class="short_url">
+                    /jsonsdk/SiteAccountManagement/getSiteAccounts
+                </span>
+            </h2>
+
+            <div class="c-method getSiteAccounts-api-refresh">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>memSiteAccIds[0]</label>
+                    <input class="ref-memSiteAccIds_0-api-refresh span13 form-control" value="">
+                    <br />
+                    <label>memSiteAccIds[1]</label>
+                    <input class="ref-memSiteAccIds_1-api-refresh span13 form-control" value="">
+                    <br /><br />
+                    <button class="btn btn-getSiteAccounts-api-refresh btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteAccounts-api-refresh" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+     <!-- Get Site Account -->
+    <!--List Site-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-refresh-account hidden"  show-method="frame-list-sites-refresh-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-refresh-account hidden"  hide-method="frame-list-sites-refresh-account" >List Sites </button>                        
+        </div>
+    </div>
+
+    <div class="frame-list-sites-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Sites</b>
+            </h2>
+            <div id="container-page" class="list-sites list-sites-min-height">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Site</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-refresh-site-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+
+    </div>
+    <!-- List site -->
+    <!-- Method startSiteRefresh -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-startSiteRefresh-api-refresh hidden"  show-method="frame-startSiteRefresh-api-refresh" > Start Site Refresh </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-startSiteRefresh-api-refresh hidden"  hide-method="frame-startSiteRefresh-api-refresh" > Start Site Refresh </button>                        
+        </div>
+    </div>
+
+    <div class="frame-startSiteRefresh-api-refresh hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Start Site Refresh
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/startSiteRefresh" class="short_url">
+                    /jsonsdk/Refresh/startSiteRefresh<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method startSiteRefresh">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>userSessionToken</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                    <br />
+                    <label>memSiteAccId</label>
+                    <input class="ref-memSiteAccId-refresh-site span13 form-control" value="10055719">
+                    <br />
+                    <label>refreshParameters.refreshPriority</label>
+                    <input placeholder="refreshParameters.refreshPriority" class="ref-refreshParameters-refreshPriority span13 form-control" value="1">
+                    <br />
+                    <label>refreshParameters.refreshMode.refreshModeId</label>
+                    <input placeholder="refreshParameters.refreshMode.refreshModeId" class="ref-refreshParameters-refreshMode-refreshModeId  span13 form-control" value="2">
+                    <br />
+                    <label>refreshParameters.refreshMode.refreshMode</label>
+                    <input class="ref-refreshParameters-refreshMode-refreshMode span13 form-control" value="NORMAL">
+                    <br />
+                    <label>refreshParameters.forceRefresh</label>
+                    <input class="ref-refreshParameters-forceRefresh span13 form-control" value="true">
+                    <br />
+                    <br />
+                    <button class="btn btn-startSiteRefresh btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-startSiteRefresh" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method startSiteRefresh -->
+    
+    <!-- Method getMFAResponseForSite -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getMFAResponseForSite hidden"  show-method="frame-getMFAResponseForSite" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getMFAResponseForSite hidden"  hide-method="frame-getMFAResponseForSite" >List Sites </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getMFAResponseForSite hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get MFA Response For Site
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getMFAResponseForSite" class="short_url">
+                    /jsonsdk/Refresh/getMFAResponseForSite<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getMFAResponseForSite">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>userSessionToken</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                    <br />
+                    <label>memSiteAccId</label>
+                    <input class="ref-memSiteAccId-site-refresh span13 form-control" value="10055719">
+                    <br><br>
+                    <button api_type="refresh" class="btn btn-getMFAResponseForSite btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getMFAResponseForSite-refresh-site" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getMFAResponseForSite -->
+    <!-- Method getSiteRefreshInfo -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteRefreshInfo hidden"  show-method="frame-getSiteRefreshInfo" > Get Site Refresh Info</button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteRefreshInfo hidden"  hide-method="frame-getSiteRefreshInfo" > Get Site Refresh Info</button>                        
+        </div>
+    </div>
+    <div class="frame-getSiteRefreshInfo hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Site Refresh Info
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getSiteRefreshInfo" class="short_url">
+                    /jsonsdk/Refresh/getSiteRefreshInfo<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getSiteRefreshInfo">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>userSessionToken</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                    <br />
+                    <label>memSiteAccId</label>
+                    <input class="ref-memSiteAccId-site-refresh span13 form-control" value="10055719">
+                    <br><br>
+                    <button api_type="refresh" class="btn btn-getSiteRefreshInfo btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteRefreshInfo-refresh-site" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getSiteRefreshInfo -->
+    <!-- Method Put MFA Request For Site -->
+    <div class="show-method-api">  
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-putMFARequestForSite hidden"  show-method="frame-putMFARequestForSite" > Put MFA Request For Site </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">  
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-putMFARequestForSite hidden" hide-method="frame-putMFARequestForSite" > Put MFA Request For Site </button>                        
+        </div>
+    </div>
+    <div class="frame-putMFARequestForSite hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Put MFA Request For Site
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/putMFARequestForSite" class="short_url">
+                    /jsonsdk/Refresh/putMFARequestForSite<span>
+                    </span>
+                </span>
+            </h2>
+            <form id="IDputMFARequestForSite-api-refresh">
+                <div class="c-method putMFARequestForSite">
+                    <div class="col-md-6">
+                        <label>cobSessionToken</label>
+                        <input placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control"><br />
+                        <label>userSessionToken</label>
+                        <input placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control"><br />
+                        <label>memSiteAccId</label>
+                        <input class="ref-memSiteAccId span13 form-control" name="memSiteAccId" value="10055719"><br />
+                        <label>userResponse.objectInstanceType</label>
+                        <input type="text" name="userResponse.objectInstanceType" class="span13 form-control" value="com.yodlee.core.mfarefresh.MFAQuesAnsResponse"><br />
+                        <label>userResponse.quesAnsDetailArray[0].answer</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].answer" class="span13 form-control" value="Texas"><br />
+                        <label>userResponse.quesAnsDetailArray[0].answerFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].answerFieldType" class="span13 form-control" value="text"><br />
+                        <label>userResponse.quesAnsDetailArray[0].metaData</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].metaData" class="span13 form-control" value="QUESTION_1"><br />
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>userResponse.quesAnsDetailArray[0].question</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].question" class="span13 form-control" placeholder="" value="What is the name of your state?"><br />
+                        <label>userResponse.quesAnsDetailArray[0].questionFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].questionFieldType" class="span13 form-control" value="label"><br />
+                        <label>userResponse.quesAnsDetailArray[1].answer</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].answer" class="span13 form-control" value="w3schools"><br />
+                        <label>userResponse.quesAnsDetailArray[1].answerFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].answerFieldType" class="span13 form-control" value="text"><br />
+                        <label>userResponse.quesAnsDetailArray[1].metaData</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].metaData" class="span13 form-control" value="QUESTION_2"><br />
+                        <label>userResponse.quesAnsDetailArray[1].question</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].question" class="span13 form-control" value="What is the name of your first school"><br />
+                        <label>userResponse.quesAnsDetailArray[1].questionFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].questionFieldType" class="span13 form-control" value="label"><br />
+                    </div>
+
+                    <div class="col-md-12">
+                        <button api_type="refresh" class="btn btn-putMFARequestForSite btn-primary">Send data</button>
+                        <br><br>
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-putMFARequestForSite-refresh-site" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <!-- Method Put MFA Request For Site  -->
+</div>
+<div class="frame-site-based-update-site-account hidden api_hidden">
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemcuongle1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemcuongle1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="update" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken-update-site" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+    <!-- Get Site Accounts -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteAccounts-api-update-site-account hidden"  show-method="frame-getSiteAccounts-api-update-site-account" > Get Sites Accounts </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteAccounts-api-update-site-account hidden"  hide-method="frame-getSiteAccounts-api-update-site-account" > Get Sites Accounts </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getSiteAccounts-api-update-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Sites Accounts
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/getSiteAccounts" class="short_url">
+                    /jsonsdk/SiteAccountManagement/getSiteAccounts
+                </span>
+            </h2>
+
+            <div class="c-method getSiteAccounts-api-update-site-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>memSiteAccIds[0]</label>
+                    <input class="ref-memSiteAccIds_0-api-update-site-account span13 form-control" value="10055719">
+                    <br />
+                    <label>memSiteAccIds[1]</label>
+                    <input class="ref-memSiteAccIds_1-api-update-site-account span13 form-control" value="10055719">
+                    <br /><br />
+                    <button class="btn btn-getSiteAccounts-api-update-site-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteAccounts-api-update-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Site Account -->
+    <!--List Site-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-update-site-account hidden"  show-method="frame-list-sites-update-site-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-update-site-account hidden"  hide-method="frame-list-sites-update-site-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="frame-list-sites-update-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Sites</b>
+            </h2>
+            <div id="container-page" class="list-sites list-sites-min-height">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Site</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-update-site-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+    </div>
+    <!-- List Site -->
+    <!-- Method getSiteInfo -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteInfo-api-update-site-account hidden"  show-method="frame-getSiteInfo-api-update-site-account" >Get Site Info </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteInfo-api-update-site-account hidden"  hide-method="frame-getSiteInfo-api-update-site-account" >Get Site Info </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getSiteInfo-api-update-site-account hidden api_hidden">            
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>:Get Site Info
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteTraversal/getSiteInfo" class="short_url">
+                    /jsonsdk/SiteTraversal/getSiteInfo<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getSiteInfo-api-update-site-account">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>siteFilter.reqSpecifier</label>
+                    <input placeholder="siteFilter.reqSpecifier" class="ref-siteFilter-reqSpecifier-api-update-site-account  span13 form-control" value="128">
+                    <br />
+                    <label>siteFilter.siteId</label>
+                    <input class="ref-siteFilter-siteId-api-update-site-account span13 form-control" value="16441">
+                    <br><br>
+                    <button class="btn btn-getSiteInfo-api-update-site-account btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteInfo-api-update-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>            
+    </div>
+    <!-- Method getSiteInfo -->
+    <!-- Method getSiteLoginForm -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteLoginForm-api-update-site-account hidden"  show-method="frame-getSiteLoginForm-api-update-site-account" >Get Site Login Form </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteLoginForm-api-update-site-account hidden"  hide-method="frame-getSiteLoginForm-api-update-site-account" >Get Site Login Form </button>                        
+        </div>
+    </div>
+    <div class="frame-getSiteLoginForm-api-update-site-account hidden api_hidden">       
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>:Get Site Login Form
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/getSiteLoginForm" class="short_url">
+                    /jsonsdk/SiteAccountManagement/getSiteLoginForm<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getSiteLoginForm-api-update-site-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>siteId</label>
+                    <input class="ref-getSiteLoginForm-siteId-api-update-site-account span13 form-control" value="16441">
+                    <br><br>
+                    <button class="btn btn-getSiteLoginForm-api-update-site-account btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteLoginForm-api-update-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getSiteLoginForm -->
+    <!-- Method Update Site account credentails -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-updateSiteAccountCredentials-api-update-site-account hidden"  show-method="frame-updateSiteAccountCredentials-api-update-site-account" > Update Site account credentails </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-updateSiteAccountCredentials-api-update-site-account hidden"  hide-method="frame-updateSiteAccountCredentials-api-update-site-account" > Update Site account credentails </button>                        
+        </div>
+    </div>
+
+    <div class="frame-updateSiteAccountCredentials-api-update-site-account hidden api_hidden">            
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Update Site account credentails
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/updateSiteAccountCredentials" class="short_url">
+                    /jsonsdk/SiteAccountManagement/updateSiteAccountCredentials<span>
+                    </span>
+                </span>
+            </h2>
+            <form id="IDupdateSiteAccountCredentials-api-update-site-account">
+                <div class="c-method updateSiteAccountCredentials-api-update-site-account">
+                    <div class="col-md-3">
+                        <div class="component-list-updateSiteAccountCredentials">
+                            <input type="hidden" placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                            <input type="hidden" placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control">
+                            <input type="hidden" class="ref-updateSiteAccountCredentials-siteId span13 form-control" name="memSiteAccId" value="10055719">                                                      
+                        </div>
+                        <button class="btn btn-updateSiteAccountCredentials-api-update-site-account btn-primary">Send data</button>
+                        <br><br>          
+                    </div>
+           
+                    <div class="col-md-9">                        
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-updateSiteAccountCredentials-api-update-site-account" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>            
+    </div>
+    <!-- Update Site Account Credentials -->
+    
+    <!-- Method getMFAResponseForSite -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getMFAResponseForSite-api-update-site-account hidden"  show-method="frame-getMFAResponseForSite-api-update-site-account" > Get MFA Response For Site </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getMFAResponseForSite-api-update-site-account hidden"  hide-method="frame-getMFAResponseForSite-api-update-site-account" > Get MFA Response For Site </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getMFAResponseForSite-api-update-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get MFA Response For Site
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getMFAResponseForSite" class="short_url">
+                    /jsonsdk/Refresh/getMFAResponseForSite<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getMFAResponseForSite">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>userSessionToken</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                    <br />
+                    <label>memSiteAccId</label>
+                    <input class="ref-memSiteAccId-api-update-site-account span13 form-control" value="10055719">
+                    <br><br>
+                    <button api_type="update" class="btn btn-getMFAResponseForSite btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getMFAResponseForSite-api-update-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getMFAResponseForSite -->
+    <!-- Method Put MFA Request For Site -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-putMFARequestForSite-api-update-site-account hidden"  show-method="frame-putMFARequestForSite-api-update-site-account" > Put MFA Request For Site </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-putMFARequestForSite-api-update-site-account hidden"  hide-method="frame-putMFARequestForSite-api-update-site-account" > Put MFA Request For Site </button>                        
+        </div>
+    </div>
+
+    <div class="frame-putMFARequestForSite-api-update-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Put MFA Request For Site
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/putMFARequestForSite" class="short_url">
+                    /jsonsdk/Refresh/putMFARequestForSite<span>
+                    </span>
+                </span>
+            </h2>
+            <form id="IDputMFARequestForSite-api-update-site-account">
+                <div class="c-method putMFARequestForSite">
+                    <div class="col-md-6">
+                        <label>cobSessionToken</label>
+                        <input placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control"><br />
+                        <label>userSessionToken</label>
+                        <input placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control"><br />
+                        <label>memSiteAccId</label>
+                        <input class="ref-memSiteAccId-api-update-site-account span13 form-control" name="memSiteAccId" value="10055719"><br />
+                        <label>userResponse.objectInstanceType</label>
+                        <input type="text" name="userResponse.objectInstanceType" class="span13 form-control" value="com.yodlee.core.mfarefresh.MFAQuesAnsResponse"><br />
+                        <label>userResponse.quesAnsDetailArray[0].answer</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].answer" class="span13 form-control" value="Texas"><br />
+                        <label>userResponse.quesAnsDetailArray[0].answerFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].answerFieldType" class="span13 form-control" value="text"><br />
+                        <label>userResponse.quesAnsDetailArray[0].metaData</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].metaData" class="span13 form-control" value="QUESTION_1"><br />
+                    </div>
+                    <div class="col-md-6">
+                        <label>userResponse.quesAnsDetailArray[0].question</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].question" class="span13 form-control" placeholder="" value="What is the name of your state?"><br />
+                        <label>userResponse.quesAnsDetailArray[0].questionFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[0].questionFieldType" class="span13 form-control" value="label"><br />
+                        <label>userResponse.quesAnsDetailArray[1].answer</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].answer" class="span13 form-control" value="w3schools"><br />
+                        <label>userResponse.quesAnsDetailArray[1].answerFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].answerFieldType" class="span13 form-control" value="text"><br />
+                        <label>userResponse.quesAnsDetailArray[1].metaData</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].metaData" class="span13 form-control" value="QUESTION_2"><br />
+                        <label>userResponse.quesAnsDetailArray[1].question</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].question" class="span13 form-control" value="What is the name of your first school"><br />
+                        <label>userResponse.quesAnsDetailArray[1].questionFieldType</label>
+                        <input type="text" name="userResponse.quesAnsDetailArray[1].questionFieldType" class="span13 form-control" value="label"><br />
+                    </div>
+
+                    <div class="col-md-12">
+                        <button api_type="update" class="btn btn-putMFARequestForSite btn-primary">Send data</button>
+                        <br><br>
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-putMFARequestForSite-api-update-site-account" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <!-- Method Put MFA Request For Site  -->
+    <!-- Method getSiteRefreshInfo -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteRefreshInfo-api-update-site-account hidden"  show-method="frame-getSiteRefreshInfo-api-update-site-account" > Get Site Refresh Info </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteRefreshInfo-api-update-site-account hidden"  hide-method="frame-getSiteRefreshInfo-api-update-site-account" > Get Site Refresh Info </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getSiteRefreshInfo-api-update-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Site Refresh Info
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getSiteRefreshInfo" class="short_url">
+                    /jsonsdk/Refresh/getSiteRefreshInfo<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getSiteRefreshInfo">
+                <div class="col-md-3">
+                    <label>cobSessionToken</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>userSessionToken</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken  span13 form-control" value="1">
+                    <br />
+                    <label>memSiteAccId</label>
+                    <input class="ref-memSiteAccId-getSiteRefreshInfo-api-update-site-account span13 form-control" value="10055719">
+                    <br><br>
+                    <button api_type="update" class="btn btn-getSiteRefreshInfo btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteRefreshInfo-api-update-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getSiteRefreshInfo -->
+</div>
+<div class="frame-site-based-delete-site-account hidden api_hidden">
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemcuongle1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemcuongle1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="delete" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken-delete-site" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+    <!-- Get Site Accounts -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getSiteAccounts-api-delete-site-account hidden"  show-method="frame-getSiteAccounts-api-delete-site-account" > Get Site Accounts </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getSiteAccounts-api-delete-site-account hidden"  hide-method="frame-getSiteAccounts-api-delete-site-account" > Get Site Accounts </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getSiteAccounts-api-delete-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Site Accounts
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/SiteAccountManagement/getSiteAccounts" class="short_url">
+                    /jsonsdk/SiteAccountManagement/getSiteAccounts
+                </span>
+            </h2>
+
+            <div class="c-method getSiteAccounts-api-delete-site-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>memSiteAccIds[0]</label>
+                    <input class="ref-memSiteAccIds_0-api-delete-site-account span13 form-control" value="10055719">
+                    <br />
+                    <label>memSiteAccIds[1]</label>
+                    <input class="ref-memSiteAccIds_1-api-delete-site-account span13 form-control" value="10055719">
+                    <br /><br />
+                    <button class="btn btn-getSiteAccounts-api-delete-site-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getSiteAccounts-api-delete-site-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Site Account -->
+    <!--List Site-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-delete-site-account hidden"  show-method="frame-list-sites-delete-site-account" >List Sites </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-delete-site-account hidden"  hide-method="frame-list-sites-delete-site-account" >List Sites </button>                        
+        </div>
+    </div>
+
+    <div class="frame-list-sites-delete-site-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Sites</b>
+            </h2>
+            <div id="container-page" class="list-sites list-sites-min-height">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Site</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-delete-site-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+    </div>
+    <!-- List Site -->
+</div>
+<div class="frame-container-based-add-account hidden api_hidden">
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemcuongle1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemcuongle1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="add_account" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken-add-account" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+    <!-- Search Content Services -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-searchContentServices-api-add-account hidden"  show-method="frame-searchContentServices-api-add-account" > Search Content Services </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-searchContentServices-api-add-account hidden"  hide-method="frame-searchContentServices-api-add-account" > Search Content Services </button>                        
+        </div>
+    </div>
+
+    <div class="frame-searchContentServices-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Search Content Services
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Search/searchContentServices" class="short_url">
+                    /jsonsdk/Search/searchContentServices
+                </span>
+            </h2>
+
+            <div class="c-method searchContentServices-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>keywords</label>
+                    <input class="ref-keywords-api-add-account span13 form-control" value="America">
+                    <br />
+                    <label>notrim</label>
+                    <input class="ref-notrim-api-add-account span13 form-control" value="true">
+                    <br /><br />
+                    <button class="btn btn-searchContentServices-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-searchContentServices-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Search Content Services -->
+    <!--List Site-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-add-account hidden"  show-method="frame-list-sites-add-account" >List Content Services </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-add-account hidden"  hide-method="frame-list-sites-add-account" >List Content Services </button>                        
+        </div>
+    </div>
+
+    <div class="frame-list-sites-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Content Services</b>
+            </h2>
+            <div id="container-page" class="list-sites list-sites-min-height">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Desription</b></td>
+                            <td class="c-gray"><b> MFA</b></td>
+                            <td class="c-gray"><b> MFA Type</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-add-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+    </div>
+    <!-- List Site -->
+    <!-- Get Content Services Info1 -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getContentServiceInfo1-api-add-account hidden"  show-method="frame-getContentServiceInfo1-api-add-account" > Get Content Service Info1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getContentServiceInfo1-api-add-account hidden"  hide-method="frame-getContentServiceInfo1-api-add-account" > Get Content Service Info1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getContentServiceInfo1-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Content Service Info1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/ContentServiceTraversal/getContentServiceInfo1" class="short_url">
+                    /jsonsdk/ContentServiceTraversal/getContentServiceInfo1
+                </span>
+            </h2>
+
+            <div class="c-method getContentServiceInfo1-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>contentServiceId</label>
+                    <input placeholder="contentServiceId" class="ref-contentServiceId-api-add-account span13 form-control">
+                    <br />
+                    <label>reqSpecifier</label>
+                    <input class="ref-reqSpecifier-api-add-account span13 form-control" value="128">
+                    <br />
+                    <label>notrim</label>
+                    <input class="ref-notrim-api-add-account span13 form-control" value="true">
+                    <br /><br />
+                    <button class="btn btn-getContentServiceInfo1-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getContentServiceInfo1-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Content Service Info1 -->
+    <!-- Get Login Form For Content Services -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getLoginFormForContentService-api-add-account hidden"  show-method="frame-getLoginFormForContentService-api-add-account" > Get Login Form For Content Service </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getLoginFormForContentService-api-add-account hidden"  hide-method="frame-getLoginFormForContentService-api-add-account" > Get Login Form For Content Service </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getLoginFormForContentService-api-add-account hidden api_hidden">       
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Login Form For Content Service
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/ItemManagement/getLoginFormForContentService" class="short_url">
+                    /jsonsdk/ItemManagement/getLoginFormForContentService<span>
+                    </span>
+                </span>
+            </h2>
+            <div class="c-method getLoginFormForContentService-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />                    
+                    <label>contentServiceId</label>
+                    <input class="ref-getLoginFormForContentService-contentServiceId-api-add-account span13 form-control" value="11175">
+                    <br><br>
+                    <button class="btn btn-getLoginFormForContentService-api-add-account btn-primary">Send data</button>
+                    <br><br>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getLoginFormForContentService-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+    <!-- Method getLoginFormForContentService -->
+    <!-- Method addItemForContentService1 -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-addItemForContentService1-api-add-account hidden"  show-method="frame-addItemForContentService1-api-add-account" > Add Item For Content Service 1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-addItemForContentService1-api-add-account hidden"  hide-method="frame-addItemForContentService1-api-add-account" > Add Item For Content Service 1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-addItemForContentService1-api-add-account hidden api_hidden">            
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Add Item For Content Service 1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/ItemManagement/addItemForContentService1" class="short_url">
+                    /jsonsdk/ItemManagement/addItemForContentService1<span>
+                    </span>
+                </span>
+            </h2>
+            <form id="IDaddItemForContentService1-api-add-account">
+                <div class="c-method addItemForContentService1-api-add-account">
+                    <div class="col-md-3">
+                        <div class="component-addItemForContentService1-api-add-account">
+                            <input type="hidden" placeholder="cobSessionToken" name="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                            
+                            <input type="hidden" placeholder="userSessionToken" name="userSessionToken" class="ref-userSessionToken span13 form-control">
+
+                            <input type="hidden" class="ref-addItemForContentService1-contentServiceId span13 form-control" name="contentServiceId" value="15847">
+                        </div>
+                        <button class="btn btn-addItemForContentService1-api-add-account btn-primary">Send data</button>
+                        <br><br>
+                    
+                    </div>
+                    
+                    <div class="col-md-9">                        
+                        <p><strong>Response Json:</strong></p>
+                        <textarea id="response-addItemForContentService1-api-add-account" class="response span10"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </fieldset>            
+    </div>
+    <!-- addItemForContentServices1-api-add-account -->
+    
+   
+    <!-- startRefresh7-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-startRefresh7-api-add-account hidden"  show-method="frame-startRefresh7-api-add-account" > Start Refresh 7 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-startRefresh7-api-add-account hidden"  hide-method="frame-startRefresh7-api-add-account" > Start Refresh 7 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-startRefresh7-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Start Refresh 7
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0jsonsdk/Refresh/startRefresh7" class="short_url">
+                    /jsonsdk/Refresh/startRefresh7
+                </span>
+            </h2>
+
+            <div class="c-method startRefresh7-api-add-account">
+                <div class="col-md-3">
+
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-startRefresh7-itemId-api-add-account span13 form-control" value="10081973">
+                    <br />
+                    <label>refreshParameters.refreshMode.refreshMode</label>
+                    <input class="refreshParameters_refreshMode_refreshMode span13 form-control" value="NORMAL">
+                    <br />  
+                    <label>refreshParameters.refreshMode.refreshModeId </label>
+                    <input class="refreshParameters_refreshMode_refreshModeId  span13 form-control" value="2">
+                    <br />  
+                    <label>refreshParameters.refreshPriority </label>
+                    <input class="refreshParameters_refreshPriority  span13 form-control" value="1">
+                    <br />                       
+
+                    <button class="btn btn-startRefresh7-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-startRefresh7-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- StartRefresh7-->
+    <!-- getMFAResponse-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getMFAResponse-api-add-account hidden"  show-method="frame-getMFAResponse-api-add-account" > Get MFA Response </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getMFAResponse-api-add-account hidden"  hide-method="frame-getMFAResponse-api-add-account" > Get MFA Response </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getMFAResponse-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get MFA Response
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getMFAResponse" class="short_url">
+                    /jsonsdk/Refresh/getMFAResponse
+                </span>
+            </h2>
+
+            <div class="c-method getMFAResponse-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-getMFAResponse-itemId-api-add-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-getMFAResponse-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getMFAResponse-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- getMFAResponse -->
+    <!-- putMFARequest-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-putMFARequest-api-add-account hidden"  show-method="frame-putMFARequest-api-add-account" > Put MFA Request </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-putMFARequest-api-add-account hidden"  hide-method="frame-putMFARequest-api-add-account" > Put MFA Request </button>                        
+        </div>
+    </div>
+
+    <div class="frame-putMFARequest-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Put MFA Request
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/putMFARequest" class="short_url">
+                    /jsonsdk/Refresh/putMFARequest
+                </span>
+            </h2>
+
+            <div class="c-method putMFARequest-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-itemId-api-add-account span13 form-control" value="10081973">
+                    <br /> 
+                    <label>userResponse.objectInstanceType</label>
+                    <input class="ref-userResponse_objectInstanceType-api-add-account span13 form-control" value="com.yodlee.core.mfarefresh.MFATokenResponse">
+                    <br /> 
+                    <label>userResponse.token</label>
+                    <input class="ref-userResponse_token-api-add-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-putMFARequest-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-putMFARequest-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- putMFARequest -->
+    <!-- isItemRefreshing-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-isItemRefreshing-api-add-account hidden"  show-method="frame-isItemRefreshing-api-add-account" > Is Item Refreshing </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-isItemRefreshing-api-add-account hidden"  hide-method="frame-isItemRefreshing-api-add-account" > Is Item Refreshing </button>                        
+        </div>
+    </div>
+
+    <div class="frame-isItemRefreshing-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Is Item Refreshing
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/isItemRefreshing" class="short_url">
+                    /jsonsdk/Refresh/isItemRefreshing
+                </span>
+            </h2>
+
+            <div class="c-method isItemRefreshing-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>memItemId</label>
+                    <input class="ref-memItemId-api-add-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-isItemRefreshing-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-isItemRefreshing-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- IsItemFreshing -->
+    <!-- Get RefreshInfo1 -->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getRefreshInfo1-api-add-account hidden"  show-method="frame-getRefreshInfo1-api-add-account" > Get Refresh Info1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getRefreshInfo1-api-add-account hidden"  hide-method="frame-getRefreshInfo1-api-add-account" > Get Refresh Info1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getRefreshInfo1-api-add-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Refresh Info1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getRefreshInfo1" class="short_url">
+                    /jsonsdk/Refresh/getRefreshInfo1
+                </span>
+            </h2>
+
+            <div class="c-method getRefreshInfo1-api-add-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemIds[0] </label>
+                    <input class="ref-itemIds_0-api-add-account span13 form-control" value="10081973">
+                    <br />
+                    <label>itemIds[1] </label>
+                    <input class="ref-itemIds_1-api-add-account span13 form-control" value="10081973">
+                    <br /><br />
+                    <button class="btn btn-getRefreshInfo1-api-add-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getRefreshInfo1-api-add-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Refresh Info 1-->
+</div>
+<div class="frame-container-based-refresh-account hidden api_hidden">
+    <!-- User Login -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-userSessionToken hidden"  show-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-userSessionToken hidden"  hide-method="userSessionToken" > User Login </button>                        
+        </div>
+    </div>
+
+    <div class="userSessionToken">
+        <fieldset>
+            <h2>User Login</h2>
+            <div class="c-method">
+                <div class="notifications alert alert-error" style="display:none;"></div>
+                <div class="col-md-3">
+                    <input type="text" class="span form-control" value="sbMemcuongle1" id="login" title="login" placeholder="Enter the username"> <br />
+                    <input type="password" class="span form-control" value="sbMemcuongle1#123" title="password" id="password" placeholder="Enter the password"> <br />
+                    <div class="input-prepend">
+                        <input type="button" api_type="refresh_account" class="btn btn-primary btn-userSession-Token" value="Get UserSession Token" /> <br /><br />
+                        <input type="text" name="userSessionToken" title="userSessionToken" class="span5 form-control" id="userSessionToken">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-userSessionToken-refresh-account" class="response span10"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <!-- User Login -->
+    <!-- Get Item Summaries Without Item Data -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getItemSummariesWithoutItemData-api-refresh-account hidden"  show-method="frame-getItemSummariesWithoutItemData-api-refresh-account" > Get Item Summaries Without Item Data </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getItemSummariesWithoutItemData-api-refresh-account hidden"  hide-method="frame-getItemSummariesWithoutItemData-api-refresh-account" > Get Item Summaries Without Item Data </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getItemSummariesWithoutItemData-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Item Summaries Without Item Data
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/DataService/getItemSummariesWithoutItemData" class="short_url">
+                    /jsonsdk/DataService/getItemSummariesWithoutItemData
+                </span>
+            </h2>
+
+            <div class="c-method getItemSummariesWithoutItemData-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br /><br />                    
+                    <button class="btn btn-getItemSummariesWithoutItemData-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getItemSummariesWithoutItemData-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Item Summaries Without Item Data -->
+    <!--List Site-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-list-sites-refresh-account hidden"  show-method="frame-list-sites-refresh-account" >List Item Data </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-list-sites-refresh-account hidden"  hide-method="frame-list-sites-refresh-account" >List Item Data </button>                        
+        </div>
+    </div>
+
+    <div class="frame-list-sites-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>List Item Data</b>
+            </h2>
+            <div id="container-page" class="list-sites list-sites-min-height">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="c-gray"><b> ID</b></td>
+                            <td class="c-gray"><b> Desription</b></td>
+                        </tr>
+                    </thead>
+                    <tbody class="data-list-site-api-refresh-account"></tbody>
+                </table>
+                
+            </div>
+        </fieldset>
+    </div>
+    <!-- List Site -->
+    <!-- Get Content Services Info1 -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getContentServiceInfo1-api-refresh-account hidden"  show-method="frame-getContentServiceInfo1-api-refresh-account" > Get Content Service Info1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getContentServiceInfo1-api-refresh-account hidden"  hide-method="frame-getContentServiceInfo1-api-refresh-account" > Get Content Service Info1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getContentServiceInfo1-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Content Service Info1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/ContentServiceTraversal/getContentServiceInfo1" class="short_url">
+                    /jsonsdk/ContentServiceTraversal/getContentServiceInfo1
+                </span>
+            </h2>
+
+            <div class="c-method getContentServiceInfo1-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>contentServiceId</label>
+                    <input placeholder="contentServiceId" class="ref-contentServiceId-api-refresh-account span13 form-control">
+                    <br />
+                    <label>reqSpecifier</label>
+                    <input class="ref-reqSpecifier-api-refresh-account span13 form-control" value="128">
+                    <br />
+                    <label>notrim</label>
+                    <input class="ref-notrim-api-refresh-account span13 form-control" value="true">
+                    <br /><br />
+                    <button class="btn btn-getContentServiceInfo1-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getContentServiceInfo1-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Content Service Info1 -->
+    <!-- startRefresh7-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-startRefresh7-api-refresh-account hidden"  show-method="frame-startRefresh7-api-refresh-account" > Start Refresh 7 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-startRefresh7-api-refresh-account hidden"  hide-method="frame-startRefresh7-api-refresh-account" > Start Refresh 7 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-startRefresh7-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Start Refresh 7
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0jsonsdk/Refresh/startRefresh7" class="short_url">
+                    /jsonsdk/Refresh/startRefresh7
+                </span>
+            </h2>
+
+            <div class="c-method startRefresh7-api-refresh-account">
+                <div class="col-md-3">
+
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-startRefresh7-itemId-api-refresh-account span13 form-control" value="10081973">
+                    <br />
+                    <label>refreshParameters.refreshMode.refreshMode</label>
+                    <input class="refreshParameters_refreshMode_refreshMode-api-refresh-account span13 form-control" value="NORMAL">
+                    <br />  
+                    <label>refreshParameters.refreshMode.refreshModeId </label>
+                    <input class="refreshParameters_refreshMode_refreshModeId-api-refresh-account  span13 form-control" value="2">
+                    <br />  
+                    <label>refreshParameters.refreshPriority </label>
+                    <input class="refreshParameters_refreshPriority-api-refresh-account  span13 form-control" value="1">
+                    <br />                       
+
+                    <button class="btn btn-startRefresh7-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-startRefresh7-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- StartRefresh7-->
+     <!-- getMFAResponse-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getMFAResponse-api-refresh-account hidden"  show-method="frame-getMFAResponse-api-refresh-account" > Get MFA Response </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getMFAResponse-api-refresh-account hidden"  hide-method="frame-getMFAResponse-api-refresh-account" > Get MFA Response </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getMFAResponse-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get MFA Response
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getMFAResponse" class="short_url">
+                    /jsonsdk/Refresh/getMFAResponse
+                </span>
+            </h2>
+
+            <div class="c-method getMFAResponse-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-getMFAResponse-itemId-api-refresh-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-getMFAResponse-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getMFAResponse-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- getMFAResponse -->
+    <!-- putMFARequest-->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-putMFARequest-api-refresh-account hidden"  show-method="frame-putMFARequest-api-refresh-account" > Put MFA Request </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-putMFARequest-api-refresh-account hidden"  hide-method="frame-putMFARequest-api-refresh-account" > Put MFA Request </button>                        
+        </div>
+    </div>
+
+    <div class="frame-putMFARequest-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Put MFA Request
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/putMFARequest" class="short_url">
+                    /jsonsdk/Refresh/putMFARequest
+                </span>
+            </h2>
+
+            <div class="c-method putMFARequest-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-itemId-api-refresh-account span13 form-control" value="10081973">
+                    <br /> 
+                    <label>userResponse.objectInstanceType</label>
+                    <input class="ref-userResponse_objectInstanceType-api-refresh-account span13 form-control" value="com.yodlee.core.mfarefresh.MFATokenResponse">
+                    <br /> 
+                    <label>userResponse.token</label>
+                    <input class="ref-userResponse_token-api-refresh-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-putMFARequest-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-putMFARequest-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- putMFARequest -->
+    <!-- isItemRefreshing-->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-isItemRefreshing-api-refresh-account hidden"  show-method="frame-isItemRefreshing-api-refresh-account" > Is Item Freshing </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-isItemRefreshing-api-refresh-account hidden"  hide-method="frame-isItemRefreshing-api-refresh-account" > Is Item Freshing </button>                        
+        </div>
+    </div>
+
+    <div class="frame-isItemRefreshing-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Is Item Freshing
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/isItemRefreshing" class="short_url">
+                    /jsonsdk/Refresh/isItemRefreshing
+                </span>
+            </h2>
+
+            <div class="c-method isItemRefreshing-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>memItemId</label>
+                    <input class="ref-memItemId-api-refresh-account span13 form-control" value="10081973">
+                    <br />                    
+                    <button class="btn btn-isItemRefreshing-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-isItemRefreshing-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- IsItemFreshing -->
+    
+    <!-- Get RefreshInfo1 -->
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getRefreshInfo1-api-refresh-account hidden"  show-method="frame-getRefreshInfo1-api-refresh-account" > Get Refresh Info1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getRefreshInfo1-api-refresh-account hidden"  hide-method="frame-getRefreshInfo1-api-refresh-account" > Get Refresh Info1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getRefreshInfo1-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Refresh Info1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0/jsonsdk/Refresh/getRefreshInfo1" class="short_url">
+                    /jsonsdk/Refresh/getRefreshInfo1
+                </span>
+            </h2>
+
+            <div class="c-method getRefreshInfo1-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemIds[0] </label>
+                    <input class="ref-itemIds_0-api-refresh-account span13 form-control" value="10081973">
+                    <br />
+                    <label>itemIds[1] </label>
+                    <input class="ref-itemIds_1-api-refresh-account span13 form-control" value="10081973">
+                    <br /><br />
+                    <button class="btn btn-getRefreshInfo1-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getRefreshInfo1-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+        </fieldset>       
+    </div>
+    <!-- Get Refresh Info 1-->
+    <!-- getItemSummaryForItem1-->
+     <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-success btn-show btn-show-method show-method-frame-getItemSummaryForItem1-api-refresh-account hidden"  show-method="frame-getItemSummaryForItem1-api-refresh-account" > Get Item Summary For Item1 </button>                        
+        </div>
+    </div>
+    <div class="show-method-api">
+        <div class="col-md-12 show-method-button"> 
+            <button class="btn btn-primary btn-show btn-hide-method hide-method-frame-getItemSummaryForItem1-api-refresh-account hidden"  hide-method="frame-getItemSummaryForItem1-api-refresh-account" > Get Item Summary For Item1 </button>                        
+        </div>
+    </div>
+
+    <div class="frame-getItemSummaryForItem1-api-refresh-account hidden api_hidden">
+        <fieldset>
+            <h2 class="description">
+                <b>Method</b>: Get Item Summary For Item1
+                <br />
+                <span class="method c-gray">POST:</span>
+                <span title="https://rest.developer.yodlee.com/services/srest/restserver/v1.0 /jsonsdk/DataService/getItemSummaryForItem1" class="short_url">
+                     /jsonsdk/DataService/getItemSummaryForItem1
+                </span>
+            </h2>
+
+            <div class="c-method getItemSummaryForItem1-api-refresh-account">
+                <div class="col-md-3">
+                    <label>Cobrand session Token</label>
+                    <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                    <br />
+                    <label>User session Token</label>
+                    <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                    <br />
+                    <label>itemId</label>
+                    <input class="ref-getItemSummaryForItem1-itemId-api-refresh-account span13 form-control" value="10081973">
+                    <br />
+                    <label>dex.startLevel</label>
+                    <input class="ref-dex_startLevel-api-refresh-account span13 form-control" value="0">
+                    <br />
+                    <label>dex.endLevel</label>
+                    <input class="ref-dex_endLevel-api-refresh-account span13 form-control" value="0">
+                    <br />
+                    <label>dex.extentLevels[0]</label>
+                    <input class="ref-dex_extentLevels_0-api-refresh-account span13 form-control" value="4">
+                    <br />
+                    <label>dex.extentLevels[1]</label>
+                    <input class="ref-dex_extentLevels_1-api-refresh-account span13 form-control" value="4">
+                    <br />
+                    <br />
+                    <button class="btn btn-getItemSummaryForItem1-api-refresh-account btn-primary">Send data</button>
+                    <br /><br />
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Response Json:</strong></p>
+                    <textarea id="response-getItemSummaryForItem1-api-refresh-account" class="response span10"></textarea>
+                </div>
+
+            </div>
+            <br/><br/>
+            <div class="col-md-6 test_data hidden"><label>TESTDATA</label>&nbsp;&nbsp;<b><span class="currencyCode_data text-right"> </span>&nbsp; <span class="amount_data text-right"> </span></b>  </div>
+        </fieldset>       
+    </div>
+    <!-- Get Refresh Info 1-->
+</div>
+
+<div class="frame-getItemSummaries hidden">
+    <!-- Method getItemSummaries  -->
+    <fieldset>
+        <h2 class="description">
+            <b>Method</b>: GetItem Summaries
+            <br />
+            <span class="method c-gray">POST:</span>
+        </h2>
+        <div class="c-method getItemSummaries ">
+            <div class="col-md-3">
+                <label>Cobrand session Token</label>
+                <input placeholder="cobSessionToken" class="ref-cobSessionToken span13 form-control">
+                <br />
+                <label>User session Token</label>
+                <input placeholder="userSessionToken" class="ref-userSessionToken span13 form-control">
+                <br><br>
+                <button class="btn btn-getItemSummaries btn-primary">Send data</button>
+                <br><br>
+            </div>
+            <div class="col-md-9">
+                <p><strong>Response Json:</strong></p>
+                <textarea id="response-getItemSummaries" class="response span10"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <!-- Method getItemSummaries  -->    
+</div>
+    <!-- Small modal -->
+    <div class="modal fade" id="delete-site-account-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">QUESTION</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Are you sure? </h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" data-siteid="" class="btn btn-primary yes-delete-site-account">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Small modal -->
+        
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/codemirror.js"></script>
+    <script src="static/js/javascript.js"></script>
+    <script type="text/html">
+        $(document).ready(function(){
+            
+        });
+
+    </script>
+</body>
+</html>

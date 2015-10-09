@@ -23,6 +23,7 @@ $(function () {
             lineWrapping: true,
             lineNumbers: true,
             mode: "application/json"
+              
         });
     }
 
